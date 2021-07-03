@@ -183,13 +183,13 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
             <FormLabel>Username</FormLabel>
               <Input value={username} placeholder="Username" onChange={ e => {
                   let loggedUser = setUsername(e.target.value);
-                  console.log(loggedUser);
+                  console.log("username:",loggedUser);
                   
               }} />
               <FormLabel>Password</FormLabel>
               <Input value={password} style={{marginTop : '10px'}} placeholder="Password" onChange={ e => {
                   let loggedPass = setPassword(e.target.value);
-                  console.log(loggedPass);
+                  console.log("password",loggedPass);
                 
               }} />
               <FormLabel>First Name</FormLabel>
@@ -199,6 +199,7 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
 										value={firstname}
 										onChange={e => {
 											setFirstName(e.target.value);
+                      console.log("firstName", e.target.value);
 										}}
 									/>
 									<FormLabel>Last Name</FormLabel>
@@ -208,6 +209,7 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
 										value={lastname}
 										onChange={e => {
 											setLastName(e.target.value);
+                      console.log("lastName:", e.target.value);
 										}}
 									/>
 									<FormLabel>Email</FormLabel>
@@ -218,6 +220,7 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
 										value={email}
 										onChange={e => {
 											setEmail(e.target.value);
+                      console.log("email", e.target.value);
 										}}
 									/>
                   
@@ -229,11 +232,13 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
 										value={address}
 										onChange={e => {
 											setAddress(e.target.value);
+                      console.log("address:" , e.target.value);
                     }}
                     
 									/>
                     <FormLabel>Profile Picture</FormLabel>
-                    <Login/>
+                    <Login value={imageURL}/>
+                    {console.log(imageURL)};
             </DrawerBody>
   
             <DrawerFooter>
