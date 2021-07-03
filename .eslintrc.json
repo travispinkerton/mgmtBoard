@@ -1,0 +1,36 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "/usr/local/lib/node_modules/babel-eslint",
+ // This line is required to fix "unexpected token" errors
+  "rules": {
+    "indent": ["warn", 2, { "MemberExpression": 1 }],
+    "no-console": "off",
+    // "no-nested-ternary": "warn",
+    "no-unused-vars": "warn",
+    "no-useless-catch": "off"
+  },
+  "globals": {
+    "$": true,
+    "Promise": true,
+    "console": true,
+    "console.log": true,
+    "fetch": true,
+    "localStorage": true,
+    "require": true,
+    "exports": true,
+    "export": true,
+    "module": true,
+    "import": true,
+    "__dirname": true,
+    "process": true,
+    "beforeAll": true,
+    "afterAll": true,
+    "expect": true,
+    "xit": true,
+    "it": true,
+    "Buffer": true,
+    "navigator": true,
+    "describe": true,
+    "document": true,
+  }
+}
