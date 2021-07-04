@@ -238,18 +238,14 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
 									/>
                     <FormLabel>Profile Picture</FormLabel>
                     <Login value={imageURL}/>
-                    {console.log(imageURL)};
+                    {console.log(imageURL)}
             </DrawerBody>
   
             <DrawerFooter>
               <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue" onClick={(event) => {
-                  let search = event.target.value;
-                  console.log('searched', search);
-
-              } }>Sign-Up</Button>
+              <Button colorScheme="blue" onClick={handleRegisterSubmit}>Sign-Up</Button>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
