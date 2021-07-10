@@ -18,20 +18,24 @@ const App = () => {
   const [message, setMessage] = useState('');
   const [token, setToken] = useState(getCurrentUserToken(), []);
   console.log('token:', token);
+  const [ user , setUser ] = useState({});
 	const [currentUser, setCurrentUser] = useState(getCurrentUser());
 	const [orders, setOrders] = useState([{}]);
 	const [cart, setCart] = useState(getCart());
 	const [filterValue, setFilterValue] = useState('');
 
   return (<div Classname='App'>
-    <Testmodule/>
+    
     <DrawerExample
     currentUser={currentUser}
     setCurrentUser={setCurrentUser}
     token={token}
+    setUser={setUser}
+    user={user}
     setToken={setToken}
     setFilterValue={setFilterValue}
     filterValue={filterValue}/>
+    <Testmodule/>
   </div>)
 }
 ReactDOM.render(

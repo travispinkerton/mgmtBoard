@@ -1,0 +1,43 @@
+#sign-up {
+    display: flex;
+    border:  8px double darkcyan;
+    padding: 30px;
+    width: 294px;
+    
+}
+
+.log-in-form {
+
+    width: 300px;
+}
+
+#username {
+    letter-spacing: 3px;
+    border : 3px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 283px
+}
+
+.log-out {
+    display: grid;
+    /* display: flex; */
+    justify-content: center;
+    grid-template-rows: 1 1 1;
+    
+}
+
+.log-out-button {
+    box-shadow : 10px 6px #aaaaaa;
+    border : 6px solid #231f20
+
+}
+#password {
+    letter-spacing: 12px;
+    border : 3px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 282px;
+    padding-right : 20px;
+
+}

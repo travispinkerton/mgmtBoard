@@ -25,8 +25,8 @@ async function buildTables() {
 
     CREATE TABLE users(
       id SERIAL PRIMARY KEY,
-      firstname varchar(255) UNIQUE ,
-      lastname varchar(255) UNIQUE ,
+      firstname varchar(255) NOT NULL,
+      lastname varchar(255) NOT NULL ,
       email VARCHAR(255) UNIQUE NOT NULL,
       address VARCHAR(255) UNIQUE NOT NULL,
       imageURL VARCHAR(255) DEFAULT 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png',

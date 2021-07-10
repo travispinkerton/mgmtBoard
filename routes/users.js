@@ -4,10 +4,42 @@ const { JWT_SECRET } = process.env;
 
 const {
 	createUser,
-    getUserByUsername
+    getUserByUsername,
+	getUser
 } = require('../db/users');
 
 const { requireUser, requireAdmin } = require('./utils');
+
+usersRouter.post('/login', async (req, res, next) => {
+	const { username, password } = req.body;
+
+	try {
+		if (!username || !password) {
+			return res.send({
+				success: false,
+				message: 'Missing username or password!'
+			});
+		}
+
+		const user = await getUser(req.body);
+
+		if (user) {
+			const token = sign(
+				{ id: user.id, username: user.username },
+				JWT_SECRET
+			);
+
+			res.send({
+				success: true,
+				message: 'You are logged in!',
+				user,
+				token
+			});
+		}
+	} catch ({ name, message }) {
+		res.send({ name, message });
+	}
+});
 
 usersRouter.post('/register', async (req, res, next) => {
 	const userFields = [

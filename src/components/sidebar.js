@@ -1,17 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ImageUploader from 'react-images-upload';
+import swal from 'sweetalert';
 import { callApi } from '../api';
-
+import './sidebar.css';
 import {
     useDisclosure,
     Button,
     Drawer,
     Badge,
+    ModalContent,
+	  Tabs,
+	  Tab,
+	  TabList,
+	  TabPanels,
+	  TabPanel,
     DrawerOverlay,
     DrawerHeader,
     DrawerBody,
     DrawerFooter,
     DrawerCloseButton,
+    ModalCloseButton,
+    Modal,
+    ModalOverlay,
     DrawerContent,
     Input,
     useToast,
@@ -19,6 +29,7 @@ import {
 
 } from '@chakra-ui/react';
 
+import {Link, Linkto, BrowserRouter as Router} from 'react-router-dom';
 import {
 	storeCurrentUser,
 	storeCurrentUserToken,
@@ -57,10 +68,10 @@ class Login extends React.Component {
   }
 }
 
-function DrawerExample({filterValue, setFilterValue, token, setToken, currentUser, setCurrentUser}) {
+function DrawerExample({filterValue, user, setUser, setFilterValue, token, setToken, currentUser, setCurrentUser}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
-
+    
     const [searchQuery, setSearchQuery] = useState('');
     const [firstname, setFirstName] = useState('');
     const [lastname, setLastName] = useState('');
@@ -164,9 +175,119 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
 
     return (
       <>
+        <div className="log-in">
+        
+        { token && currentUser ? <div className="log-out">&nbsp;&nbsp;&nbsp;You are now logged in!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Button className="log-out-button" colorScheme="red" onClick={(event) => {
+            event.preventDefault();
+            localStorage.clear();
+            setToken('');
+            setUser({});
+            setCurrentUser({});
+            swal("Are you sure you want to do this?", {
+              buttons: ["No, don't log me out", "Yes, I am sure"],
+            });
+    
+        }}>
+            LOG-OUT</Button></div> : <span><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter your username and email to login!</i></b></span>}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <form id="log-in-form">
+      &nbsp;&nbsp;&nbsp;username&nbsp;<Input border="4px groove darkmagenta" maxWidth="280px" className="username" type="text" value ={username} placeholder="username" onChange={(event )=> {
+            event.preventDefault();
+            let username = event.target.value;
+            
+            return setUsername(username);
+            
+        }}></Input>
+        &nbsp;&nbsp;&nbsp;password&nbsp;
+        <Input className="password"
+          type="text"
+          border="4px groove darkmagenta"
+          maxWidth="280px"
+          value={password}
+          onChange={(event) => {
+            event.preventDefault();
+            let password = event.target.value;
+            
+            return setPassword(password);
+          }}
+          placeholder="password"
+        ></Input>
+      </form>
+      &nbsp;&nbsp;&nbsp;
+      <Button
+        id="submit-info"
+        colorScheme="green"
+        value={username, password}
+        onClick={handleSubmitLogin}
+            
+        
+      >
+        LOGIN
+      </Button>
+      &nbsp;&nbsp;&nbsp;
+      {!user && !token ? <div>Login to continue</div> : <><span>What should we do today?</span></>}
+    </div>
         <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-          Open
+          Sign-Up
         </Button>
+        
+        {/* {token && currentUser ? (
+				<Router>
+           <Link to='/'>
+					<Button variant='outline' onClick={handleUserLogout}>
+						Logout
+					</Button>
+          </Link>
+          </Router>
+				
+			) : (
+				<Button variant='outline' onClick={onOpen}>
+					Login
+				</Button>
+			)} */}
+      
+        {/* <Button variant='outline' onClick={onOpen}>
+					Login
+				</Button>
+        <Modal isOpen={isOpen} onClose={onClose}>
+				<ModalOverlay />
+				<ModalContent>
+					<Tabs>
+						<TabList>
+            <Tab>Login</Tab>
+            </TabList>
+            <TabPanels>
+            <TabPanel>
+								<form onSubmit={handleSubmitLogin}>
+									<FormLabel>Username</FormLabel>
+									<Input
+										type='text'
+										placeholder='enter username'
+										value={username}
+										onChange={e => {
+											setUsername(e.target.value);
+										}}
+									/>
+									<FormLabel>Password</FormLabel>
+									<Input
+										type='password'
+										placeholder='enter password'
+										value={password}
+										onChange={e => {
+											setPassword(e.target.value);
+										}}
+									/>
+									<Button type='submit' onClick={onClose}>
+										Submit
+									</Button>
+								</form>
+							</TabPanel>
+						</TabPanels>
+					</Tabs>
+					<ModalCloseButton />
+				</ModalContent>
+			</Modal>               */}
+        
         <Drawer
           isOpen={isOpen}
           placement="right"
@@ -245,7 +366,7 @@ function DrawerExample({filterValue, setFilterValue, token, setToken, currentUse
               <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue" onClick={handleRegisterSubmit}>Sign-Up</Button>
+              <Button colorScheme="blue" onClick={handleRegisterSubmit}>Sign-Up</Button> 
             </DrawerFooter>
           </DrawerContent>
         </Drawer>

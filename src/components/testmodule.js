@@ -94,12 +94,14 @@ const testmodule = () => {
     <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
   </WrapItem>
 </Wrap>
-<Box w={"fit-content"}>
+
+<Box padding="30px" w={"fit-content"}>
 <PhoneIcon />
-// Use the `boxSize` prop to change the icon size
+&nbsp;&nbsp;&nbsp;
 <AddIcon w={6} h={6} />
-// Use the `color` prop to change the icon color
+&nbsp;&nbsp;&nbsp;
 <WarningIcon w={8} h={8} color="red.500" />
+&nbsp;&nbsp;&nbsp;
 </Box>
 
 

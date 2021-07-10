@@ -53,8 +53,31 @@ const getUserByUsername = async username => {
 	}
 };
 
+const getUser = async ({ username, password }) => {
+	try {
+		const user = await getUserByUsername(username);
+
+		if (!user) {
+			throw Error('Wrong credentials');
+		}
+
+		const hashedPass = user.password;
+		const match = await compare(password, hashedPass);
+
+		if (match) {
+			delete user.password;
+			return user;
+		} else {
+			throw Error('Wrong credentials');
+		}
+	} catch (error) {
+		throw error;
+	}
+};
+
 module.exports = { createUser, 
-    getUserByUsername }
+    getUserByUsername,
+getUser }
     
     // getUser,
 	// getUserById,
