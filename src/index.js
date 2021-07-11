@@ -5,12 +5,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 import {
   
   DrawerExample,
-  Testmodule
+  Testmodule,
+  Features
 } from './components';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { getCurrentUser, getCurrentUserToken, getCart } from './auth';
+
 
 
 const App = () => {
@@ -36,6 +38,8 @@ const App = () => {
     setFilterValue={setFilterValue}
     filterValue={filterValue}/>
     <Testmodule/>
+    
+    <Features/>
   </div>)
 }
 ReactDOM.render(

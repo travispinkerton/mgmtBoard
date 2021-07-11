@@ -358,7 +358,9 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
                     
 									/>
                     <FormLabel>Profile Picture</FormLabel>
-                    <Login value={imageURL}/>
+                    <Login value={imageURL} onChange={()=> {
+                      localStorage.setItem(imageURL);
+                    }}/>
                     {console.log(imageURL)}
             </DrawerBody>
   
