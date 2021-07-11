@@ -27,6 +27,10 @@
     
 }
 
+#doge-weather {
+    display : 'flex';
+    flex-direction: row-reverse;
+}
 .log-out-button {
     box-shadow : 10px 6px #aaaaaa;
     border : 6px solid #231f20

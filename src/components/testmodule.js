@@ -40,7 +40,9 @@ const testmodule = () => {
 
     return (
         <>
-        
+        <div  style={{display : 'flex'}} class='doge-weather'>
+        <div style={{paddingLeft : '1000px'}}className="shiba"><img src="https://i.ibb.co/wSzJ3SN/shiba-inu-svg-13.png" alt="shiba-inu-svg-13" border="0"></img></div>
+          </div>
         <Button onClick={()=> {
             console.log('clicked');
             window.open('https://weather.com/weather/today/l/2d835009fde58bc93cbe0b083fad70830e328c61df0302082351b37e8ddba04a');
@@ -52,11 +54,24 @@ const testmodule = () => {
           <h1>Local Weather &nbsp;</h1><Badge colorScheme="purple">New</Badge>
          
         </Button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button onClick={()=> {
+            console.log('clicked');
+            window.open('https://www.dogedisco.com/');
+        }} className="blocks"
+            style={{border : '10px black groove',
+            backgroundColor : 'goldenrod',
+            height : '45px',
+                    margin : '4px'}}>
+          <h1>MILLION DOGE DISCO&nbsp;</h1><Badge colorScheme="purple">New</Badge></Button>
+          
         <section class="hero is-primary">
         <div class="hero-body">
-          <p class="title">
+          <Center>
+            <p class="title">
             Trails & Secret Spots of SLO County, CA
-          </p>
+            </p>
+          </Center>
           <p class="subtitle">
           <Center id='banner' h="100px" color="white" onClick={(event) => {
             event.preventDefault(); 
@@ -96,7 +111,9 @@ const testmodule = () => {
 <Helmet>
 <script src="https://widget.nomics.com/embed.js"></script>
 </Helmet>
+
 </div>
+
 
       <Button>OPEN NAV</Button>
       <Menu>

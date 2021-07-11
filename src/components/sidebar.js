@@ -175,7 +175,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
 
     return (
       <>
-        <div className="log-in">
+        <div className="log-in" >
         
         { token && currentUser ? <div className="log-out">&nbsp;&nbsp;&nbsp;You are now logged in!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Button className="log-out-button" colorScheme="red" onClick={(event) => {
             event.preventDefault();
@@ -188,17 +188,19 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
             });
     
         }}>
-            LOG-OUT</Button></div> : <span><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter your username and email to login!</i></b></span>}
+            LOG-OUT</Button></div> : <div style={{paddingTop : '62px'}}><span><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter your username and email to login!</i></b></span></div>}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <form id="log-in-form">
-      &nbsp;&nbsp;&nbsp;username&nbsp;<Input border="4px groove darkmagenta" maxWidth="280px" className="username" type="text" value ={username} placeholder="username" onChange={(event )=> {
+            
+      <form id="log-in-form" >
+      &nbsp;&nbsp;&nbsp;username&nbsp;&nbsp;&nbsp;<Input border="4px groove darkmagenta" maxWidth="280px" className="username" type="text" value ={username} placeholder="username" onChange={(event )=> {
             event.preventDefault();
             let username = event.target.value;
             
             return setUsername(username);
             
         }}></Input>
-        &nbsp;&nbsp;&nbsp;password&nbsp;
+        &nbsp;&nbsp;&nbsp;password&nbsp;&nbsp;&nbsp;
+        
         <Input className="password"
           type="text"
           border="4px groove darkmagenta"
@@ -212,8 +214,10 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
           }}
           placeholder="password"
         ></Input>
-      </form>
-      &nbsp;&nbsp;&nbsp;
+        </form>
+        { currentUser && token ? <div style={{fontSize : '35px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', letterSpacing : '3px'}} ><b><p>{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
+      
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Button
         id="submit-info"
         colorScheme="green"
@@ -224,12 +228,16 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
       >
         LOGIN
       </Button>
-      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {!user && !token ? <div>Login to continue</div> : <><span>What should we do today?</span></>}
     </div>
+    
+    <br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
           Sign-Up
         </Button>
+        
         
         {/* {token && currentUser ? (
 				<Router>
