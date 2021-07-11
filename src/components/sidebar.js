@@ -215,8 +215,10 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
           placeholder="password"
         ></Input>
         </form>
-        { currentUser && token ? <div style={{fontSize : '35px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', letterSpacing : '3px'}} ><b><p>{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
+        { currentUser && token ? <div style={{fontSize : '35px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', letterSpacing : '3px'}} ><b><p>&nbsp;&nbsp;&nbsp;{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
       
+        
+        <br></br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Button
         id="submit-info"
@@ -229,7 +231,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
         LOGIN
       </Button>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      {!user && !token ? <div>Login to continue</div> : <><span>What should we do today?</span></>}
+      {!user && !token ? <div>Login to continue</div> : <><span style={{fontSize : "23px", fontStyle : 'oblique'}}><b>What <span style={{opacity : '.5'}}><i><s>should</s></i></span> will we do <span style={{opacity : '.5'}}><s><i>today</i></s></span> right now?</b></span></>}
     </div>
     
     <br></br>

@@ -27,6 +27,12 @@
     
 }
 
+.blocks {
+    display: none;
+    box-shadow : 10px 6px #aaaaaa;
+    
+}
+
 #doge-weather {
     display : 'flex';
     flex-direction: row-reverse;

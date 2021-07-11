@@ -41,32 +41,47 @@ const testmodule = () => {
     return (
         <>
         <div  style={{display : 'flex'}} class='doge-weather'>
-        <div style={{paddingLeft : '1000px'}}className="shiba"><img src="https://i.ibb.co/wSzJ3SN/shiba-inu-svg-13.png" alt="shiba-inu-svg-13" border="0"></img></div>
+        <div style={{paddingLeft : '980px'}}className="shiba"><img src="https://i.ibb.co/wSzJ3SN/shiba-inu-svg-13.png" alt="shiba-inu-svg-13" border="0"></img></div>
           </div>
-        <Button onClick={()=> {
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button className="blocks" onClick={()=> {
             console.log('clicked');
             window.open('https://weather.com/weather/today/l/2d835009fde58bc93cbe0b083fad70830e328c61df0302082351b37e8ddba04a');
-        }} className="blocks"
+        }} 
             style={{border : '10px black groove',
+            boxShadow : '10px 6px #aaaaaa;',
             backgroundColor : 'goldenrod',
             height : '45px',
                     margin : '4px'}}>
           <h1>Local Weather &nbsp;</h1><Badge colorScheme="purple">New</Badge>
          
         </Button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Button onClick={()=> {
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button className="blocks" onClick={()=> {
             console.log('clicked');
             window.open('https://www.dogedisco.com/');
-        }} className="blocks"
+        }} 
             style={{border : '10px black groove',
+            boxShadow : '10px 6px #aaaaaa;',
             backgroundColor : 'goldenrod',
             height : '45px',
                     margin : '4px'}}>
           <h1>MILLION DOGE DISCO&nbsp;</h1><Badge colorScheme="purple">New</Badge></Button>
-          
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Button className="blocks" onClick={()=> {
+            console.log('clicked');
+            window.open('https://www.go.dogedisco.com/');
+        }} 
+            style={{border : '10px black groove',
+            boxShadow : '10px 6px #aaaaaa;',
+            color : "white",
+            backgroundColor : 'darkmagenta',
+            height : '45px',
+                    margin : '4px'}}>
+          <h1>DOGEDISCO APP&nbsp;</h1><Badge colorScheme="yellow">Coming SOON!</Badge></Button>
+          <br></br>&nbsp;
         <section class="hero is-primary">
-        <div class="hero-body">
+        <div style={{ paddingTop : "50px"}} class="hero-body">
           <Center>
             <p class="title">
             Trails & Secret Spots of SLO County, CA
