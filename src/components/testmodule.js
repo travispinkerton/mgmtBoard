@@ -41,7 +41,7 @@ const testmodule = () => {
     return (
         <>
         <div  style={{display : 'flex'}} class='doge-weather'>
-        <div style={{paddingLeft : '980px'}}className="shiba"><img src="https://i.ibb.co/wSzJ3SN/shiba-inu-svg-13.png" alt="shiba-inu-svg-13" border="0"></img></div>
+        <div style={{display : 'flex', margin : "0 auto"}}className="shiba"><img src="https://i.ibb.co/wSzJ3SN/shiba-inu-svg-13.png" alt="shiba-inu-svg-13" border="0"></img></div>
           </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Button className="blocks" onClick={()=> {
@@ -70,7 +70,7 @@ const testmodule = () => {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <Button className="blocks" onClick={()=> {
             console.log('clicked');
-            window.open('https://www.go.dogedisco.com/');
+            window.open('https://go.dogedisco.com');
         }} 
             style={{border : '10px black groove',
             boxShadow : '10px 6px #aaaaaa;',

@@ -192,19 +192,20 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
       <form id="log-in-form" >
-      &nbsp;&nbsp;&nbsp;username&nbsp;&nbsp;&nbsp;<Input border="4px groove darkmagenta" maxWidth="280px" className="username" type="text" value ={username} placeholder="username" onChange={(event )=> {
+      &nbsp;&nbsp;&nbsp;username&nbsp;&nbsp;&nbsp;<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" value ={username} placeholder="username" onChange={(event )=> {
             event.preventDefault();
             let username = event.target.value;
             
             return setUsername(username);
             
         }}></Input>
+        <span id="break"><br></br></span>
         &nbsp;&nbsp;&nbsp;password&nbsp;&nbsp;&nbsp;
         
         <Input className="password"
           type="text"
           border="4px groove darkmagenta"
-          maxWidth="280px"
+          maxWidth="250px"
           value={password}
           onChange={(event) => {
             event.preventDefault();
@@ -215,7 +216,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
           placeholder="password"
         ></Input>
         </form>
-        { currentUser && token ? <div style={{fontSize : '35px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', letterSpacing : '3px'}} ><b><p>&nbsp;&nbsp;&nbsp;{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
+        { currentUser && token ? <div style={{fontSize : '43px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', fontWeight : 'bolder', letterSpacing : '3px', display : 'flex', flexDirection : 'row', justifyContent : 'center'}} ><b><p>&nbsp;&nbsp;&nbsp;{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
       
         
         <br></br>
@@ -231,7 +232,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
         LOGIN
       </Button>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      {!user && !token ? <div>Login to continue</div> : <><span style={{fontSize : "23px", fontStyle : 'oblique'}}><b>What <span style={{opacity : '.5'}}><i><s>should</s></i></span> will we do <span style={{opacity : '.5'}}><s><i>today</i></s></span> right now?</b></span></>}
+      {!user && !token ? <div>Login to continue</div> : <><span className="question" style={{fontSize : "23px", fontStyle : 'oblique'}}><b>What <span style={{opacity : '.5'}}><i><s>should</s></i></span> will we do <span style={{opacity : '.5'}}><s><i>today</i></s></span> right now?</b></span></>}
     </div>
     
     <br></br>

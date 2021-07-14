@@ -6,10 +6,10 @@
     
 }
 
-.log-in-form {
+/* .log-in-form {
 
     width: 300px;
-}
+} */
 
 #username {
     letter-spacing: 3px;
@@ -52,7 +52,40 @@
 
 }
 
-@media (max-width: 910px) {
+#log-in-form {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    
+};
+    
+
+#break {
+    display: flex;
+}
+
+@media (max-width: 600px){
+    
+    .question {
+        display: none;
+    }
+    #break {
+        display: none;
+    }
+
+    #log-in-form > input {
+        border: 4px groove black;
+        display: flex;
+    }
+    #log-in-form {
+        display: flex;
+        flex-direction: column;
+        
+        padding: 30px;
+    };
+}
+
+@media (max-width: 900px) {
   
     #banner {
       display : flex;
@@ -68,4 +101,11 @@
     #email {
       display: none;
     }
-  }
+    #shiba {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        
+        
+    }
+}
