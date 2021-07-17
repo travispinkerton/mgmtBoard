@@ -1,6 +1,7 @@
 const usersRouter = require('express').Router();
 const { sign } = require('jsonwebtoken');
 const { JWT_SECRET } = process.env;
+var axios = require("axios").default;
 
 const {
 	createUser,
@@ -9,6 +10,7 @@ const {
 } = require('../db/users');
 
 const { requireUser, requireAdmin } = require('./utils');
+
 
 usersRouter.post('/login', async (req, res, next) => {
 	const { username, password } = req.body;

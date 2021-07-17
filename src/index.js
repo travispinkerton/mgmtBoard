@@ -6,7 +6,8 @@ import {
   
   DrawerExample,
   Testmodule,
-  Features
+  Features,
+  Weather
 } from './components';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -38,6 +39,7 @@ const App = () => {
     setFilterValue={setFilterValue}
     filterValue={filterValue}/>
     <Testmodule/>
+    {/* <Weather/> */}
     
     <Features/>
   </div>)

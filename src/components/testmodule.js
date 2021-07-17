@@ -79,6 +79,18 @@ const testmodule = () => {
             height : '45px',
                     margin : '4px'}}>
           <h1>DOGEDISCO APP&nbsp;</h1><Badge colorScheme="yellow">Coming SOON!</Badge></Button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Button className="blocks" onClick={()=> {
+            console.log('clicked');
+            window.open('https://go.dogedisco.com/#/map');
+        }} 
+            style={{border : '10px black groove',
+            boxShadow : '10px 6px #aaaaaa;',
+            color : "white",
+            backgroundColor : 'darkmagenta',
+            height : '45px',
+                    margin : '4px'}}>
+          <h1>DOGEDISCO MAP&nbsp;</h1><Badge colorScheme="yellow">BETA OPEN!</Badge></Button>
           <br></br>&nbsp;
         <section class="hero is-primary">
         <div style={{ paddingTop : "50px"}} class="hero-body">
@@ -126,6 +138,8 @@ const testmodule = () => {
 <Helmet>
 <script src="https://widget.nomics.com/embed.js"></script>
 </Helmet>
+
+
 
 </div>
 

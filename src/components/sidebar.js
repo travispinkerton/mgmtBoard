@@ -216,7 +216,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
           placeholder="password"
         ></Input>
         </form>
-        { currentUser && token ? <div style={{fontSize : '43px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', fontWeight : 'bolder', letterSpacing : '3px', display : 'flex', flexDirection : 'row', justifyContent : 'center'}} ><b><p>&nbsp;&nbsp;&nbsp;{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
+        { currentUser && token ? <div style={{fontSize : '40px', fontFamily : 'IBM Plex Mono, monospace', fontVariant : 'all-small-caps', fontWeight : 'bolder', letterSpacing : '3px', display : 'flex', flexDirection : 'row', justifyContent : 'center'}} ><b><p>{`Welcome Back ${currentUser.username}!`}</p></b></div> : ''}
       
         
         <br></br>
