@@ -32,6 +32,18 @@ import { Button,
     import { PhoneIcon, AddIcon, WarningIcon, ChevronDownIcon } from '@chakra-ui/icons'
 // The default icon size is 1em (16px)
 
+function calculateDaysBetweenDates(begin, end) {
+    const beginDate = new Date(begin);      
+    const endDate = new Date(end);
+    const days = [];
+    let currentDate = new Date(beginDate);
+    while (currentDate <= endDate) {
+        days.push(currentDate);
+        currentDate = new Date(currentDate.setDate(currentDate.getDate() + 1));
+    }
+    return days;
+}
+
 
 
 const testmodule = () => {
@@ -44,7 +56,10 @@ const testmodule = () => {
         <div style={{display : 'flex', margin : "0 auto"}}className="shiba"><img src="https://i.ibb.co/wSzJ3SN/shiba-inu-svg-13.png" alt="shiba-inu-svg-13" border="0"></img></div>
           </div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
         <Button className="blocks" onClick={()=> {
+          console.log(calculateDaysBetweenDates(new Date(2018,0,1), new Date(2018,0,31)));
+          console.log(calculateDaysBetweenDates(new Date(2021,0,1), new Date(2021,0,31)));
             console.log('clicked');
             window.open('https://weather.com/weather/today/l/2d835009fde58bc93cbe0b083fad70830e328c61df0302082351b37e8ddba04a');
         }} 

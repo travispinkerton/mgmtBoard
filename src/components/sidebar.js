@@ -232,7 +232,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
         LOGIN
       </Button>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      {!user && !token ? <div>Login to continue</div> : <><span className="question" style={{fontSize : "23px", fontStyle : 'oblique'}}><b>What <span style={{opacity : '.5'}}><i><s>should</s></i></span> will we do <span style={{opacity : '.5'}}><s><i>today</i></s></span> right now?</b></span></>}
+      {!currentUser && !token ? <span style={{fontSize : '27px', fontFamily : 'IBM Plex Mono, monospace'}}>Login to continue</span> : <><span className="question" style={{fontSize : "23px", fontStyle : 'oblique'}}><b>What <span style={{opacity : '.5'}}><i><s>should</s></i></span> will we do <span style={{opacity : '.5'}}><s><i>today</i></s></span> right now?</b></span></>}
     </div>
     
     <br></br>
