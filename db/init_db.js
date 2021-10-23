@@ -5,6 +5,7 @@ const {
 } = require('./index');
 
 const { createUser } = require('./users');
+const { createTrail } = require('./trails');
 
 async function buildTables() {
   try {
@@ -13,7 +14,9 @@ async function buildTables() {
     console.log('Dropping All Tables...');
 
     await client.query(`
+	DROP TABLE IF EXISTS trails; 
     DROP TABLE IF EXISTS users;
+	
             
     `);
     console.log('Finished dropping tables!');
@@ -33,6 +36,19 @@ async function buildTables() {
       username VARCHAR(255) UNIQUE NOT NULL,
       password VARCHAR(255) UNIQUE NOT NULL
       );
+		
+		
+	  CREATE TABLE trails(
+		  id SERIAL PRIMARY KEY,
+		  name VARCHAR(255) NOT NULL,
+		  description VARCHAR(255) NOT NULL,
+		  imageURL VARCHAR(255) NOT NULL,
+		  location VARCHAR(255) NOT NULL,
+		  difficulty VARCHAR(255) NOT NULL,
+		  length DECIMAL NOT NULL,
+		  rating INTEGER NOT NULL,
+		  creator_id INTEGER NOT NULL
+		); 
 
 
       `);
@@ -114,14 +130,27 @@ async function createInitialOrders() {
 
 async function populateInitialData() {
   try {
+	
+	const trail = await createTrail({
+		name: 'Bluff Train in Fiscalini Ranch Preserve',
+		description: 'The Bluff Trail in Fiscalini Ranch Preserve is a lovely place to enjoy an easy coastal walk. The ocean views are superb, flowers are abundant in the spring, and there are even opportunities to observe wildlife.',
+		imageURL: 'https://www.hikespeak.com/img/Central-Coast/SLO/Fiscalini/Fiscalini_Ranch_Preserve_Bluff_Trail_Cambria_6870.jpg',
+		location: 'Cambria, CA',
+		difficulty: 'Easy',
+		length: '1.9',
+		rating: '4',
+		creator_id: '1'
+	});
+	console.log('trail', trail);
+	
     // create useful starting data
-  } catch (error) {
+	} catch (error) {
     throw error;
   }
 }
 
 buildTables()
-  // .then(populateInitialData)
+  .then(populateInitialData)
     .then(createInitialUsers)
   .catch(console.error)
   .finally(() => client.end());
