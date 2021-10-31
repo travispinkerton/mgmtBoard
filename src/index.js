@@ -7,12 +7,14 @@ import {
   DrawerExample,
   Testmodule,
   Features,
-  Weather
+  Weather,
+  DbTrailTest
 } from './components';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { getCurrentUser, getCurrentUserToken, getCart } from './auth';
+
 
 
 
@@ -40,8 +42,9 @@ const App = () => {
     filterValue={filterValue}/>
     <Testmodule/>
     {/* <Weather/> */}
-    
+    <DbTrailTest/>
     <Features/>
+  
   </div>)
 }
 ReactDOM.render(
