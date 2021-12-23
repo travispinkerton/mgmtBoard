@@ -40,7 +40,7 @@ const createTrail = async ({
 	}
 };
 
-const getTrail = async ({ name,
+const getTrail2 = async ({ name,
     description,
     imageURL,
     location,
@@ -71,4 +71,14 @@ const getTrail = async ({ name,
 	}
 };
 
+const getTrail = async () => {
+	try {
+		const { rows: trails } = await client.query(`select * from trails`);
+		return trails;
+	} catch (error) {
+		console.error(error);
+		throw error;
+	
+    }
+};
 module.exports = {createTrail, getTrail};

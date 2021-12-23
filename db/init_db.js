@@ -131,7 +131,7 @@ async function createInitialOrders() {
 async function populateInitialData() {
   try {
 	
-	const trail = await createTrail({
+	const trail1 = await createTrail({
 		name: 'Bluff Train in Fiscalini Ranch Preserve',
 		description: 'The Bluff Trail in Fiscalini Ranch Preserve is a lovely place to enjoy an easy coastal walk. The ocean views are superb, flowers are abundant in the spring, and there are even opportunities to observe wildlife.',
 		imageURL: 'https://www.hikespeak.com/img/Central-Coast/SLO/Fiscalini/Fiscalini_Ranch_Preserve_Bluff_Trail_Cambria_6870.jpg',
@@ -141,8 +141,20 @@ async function populateInitialData() {
 		rating: '4',
 		creator_id: '1'
 	});
-	console.log('trail', trail);
+	console.log('trail', trail1);
+
+	const trail2 = await createTrail({
+		name: 'Salmon Creek Falls Trail',
+		description: 'The hike begins and ends at Salmon Creek, an inlet along the coast roughly 27 miles northwest of Cambria.',
+		imageURL: 'https://www.hikespeak.com/img/Central-Coast/Monterey/Salmon/Salmon_Creek_Falls_IMG_0170.jpg',
+		location: 'South Big Sur, CA',
+		difficulty: 'Easy',
+		length: '0.5',
+		rating: '5',
+		creator_id: '1'
+	});
 	
+	console.log('trail', trail2);
     // create useful starting data
 	} catch (error) {
     throw error;

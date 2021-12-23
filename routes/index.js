@@ -1,5 +1,6 @@
 const apiRouter = require('express').Router();
 const { usersRouter } = require('./users');
+const { trailsRouter } = require('./trails');
 
 apiRouter.get("/", (req, res, next) => {
   res.send({
@@ -14,5 +15,6 @@ apiRouter.get("/health", (req, res, next) => {
 })
 
 apiRouter.use('/users', usersRouter);
+apiRouter.use('/trails', trailsRouter);
 
 module.exports = apiRouter;
