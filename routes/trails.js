@@ -8,7 +8,7 @@ const {
 
 trailsRouter.get('/', async (req, res, next) => {
 	try {
-		const trails = await getTrail();
+		const trails  = await getTrail();
 		console.log('trails:', trails);
 		res.send(trails);
 	} catch ({ name, message }) {

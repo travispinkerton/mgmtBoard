@@ -10,15 +10,15 @@ import {
 
 const DbTrailTest = () => {
 
-  const [trail, setTrail] = useState({});
+  const [trail, setTrail] = useState([{}]);
 
   const fetchTrail = async () => {
     try {
-      const [trailData] = await callApi({
+      const trailData = await callApi({
         method: 'GET',
         path: `/trails`
       });
-      console.log(trailData);
+      console.log('trailSpread', trailData);
       setTrail(trailData);
     } catch (error) {}
   };
@@ -27,26 +27,21 @@ const DbTrailTest = () => {
 		fetchTrail();
 	}, []);
   
-  return <><div>add SVG YETI login animation!</div>
-          <div>upgrade HBO MAX//make a note board on this site?!?!?! like on fitness trac.kr basically</div>
-          <div>chop mix in LOGIC X and post</div>
-          <div>create an API call to bring trail info here</div>
-          <div>fix portfolio photos</div>
-          <div>then a UI form to submit new spots!!!</div>
-          <div>add Paradise beach to db and render</div>
+  return (
 
-{<Grid maxW='50%' className='products' borderRadius={'20px'} border='15px double white'>
-<Text fontFamily='courier' letterSpacing='1px' fontSize='xl'>Name: <b>{trail.name}</b></Text>
-<Text fontSize='l'>Description: {trail.description}</Text>
-<Image borderRadius='20px' src={trail.imageurl}></Image>
-<Text fontSize='l'>Location: {trail.location}</Text>
-<Text fontSize='l'>Difficulty: {trail.difficulty}</Text>
-<Text fontSize='l'>Length: {trail.length}</Text>
-<Text fontSize='l'>Rating: {trail.rating}</Text>
-<Text fontSize='l'>Author: {trail.creator_id}</Text></Grid>}
+trail.map(({id, name, description, imageurl, location, difficulty, length, rating, creator_id}) => 
+  <Grid key={id} maxW='50%' className='products' borderRadius={'20px'} border='15px double white'>
+<Text fontFamily='courier' letterSpacing='1px' fontSize='xl'>Name: <b>{name}</b></Text>
+<Text fontSize='l'>Description: {description}</Text>
+<Image borderRadius='20px' src={imageurl}></Image>
+<Text fontSize='l'>Location: {location}</Text>
+<Text fontSize='l'>Difficulty: {difficulty}</Text>
+<Text fontSize='l'>Length: {length}</Text>
+<Text fontSize='l'>Rating: {rating}</Text>
+<Text fontSize='l'>Author: {creator_id}</Text></Grid>)
 
 
-</>
-}
 
+  );
+  }
 export default DbTrailTest;
