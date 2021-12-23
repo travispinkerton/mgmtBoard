@@ -90,4 +90,16 @@ usersRouter.post('/register', async (req, res, next) => {
 	}
 });
 
+usersRouter.get('/:creator_id', requireUser, async (req, res, next) => {
+	const { creator_id } = req.params;
+	const id = Number(creator_id);
+
+	try {
+		const user = await getUserById(id);
+		res.send(user);
+	} catch ({ name, message }) {
+		res.send({ name, message });
+	}
+});
+
 module.exports = { usersRouter }

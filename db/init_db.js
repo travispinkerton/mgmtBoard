@@ -47,7 +47,9 @@ async function buildTables() {
 		  difficulty VARCHAR(255) NOT NULL,
 		  length DECIMAL NOT NULL,
 		  rating INTEGER NOT NULL,
-		  creator_id INTEGER NOT NULL
+		  creator_id INTEGER NOT NULL,
+		  author VARCHAR(255) NOT NULL,
+		  coordinates VARCHAR(255) NOT NULL
 		); 
 
 
@@ -139,7 +141,9 @@ async function populateInitialData() {
 		difficulty: 'Easy',
 		length: '1.9',
 		rating: '4',
-		creator_id: '1'
+		creator_id: '1',
+		author: 'Joeyisafoodie',
+		coordinates: 'https://goo.gl/maps/sngNJtCNjrTdjA7W8'
 	});
 	console.log('trail', trail1);
 
@@ -151,7 +155,9 @@ async function populateInitialData() {
 		difficulty: 'Easy',
 		length: '0.5',
 		rating: '5',
-		creator_id: '1'
+		creator_id: '1',
+		author: 'Joeyisafoodie',
+		coordinates: 'https://goo.gl/maps/7JmRiLLLtwTffNyb7'
 	});
 	
 	console.log('trail', trail2);

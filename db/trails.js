@@ -9,6 +9,8 @@ const createTrail = async ({
     rating,
     imageURL,
     creator_id,
+    author,
+    coordinates,
 
 }) => {
 	try {
@@ -17,7 +19,7 @@ const createTrail = async ({
 		const {
 			rows: [trail],
 		} = await client.query(
-			`insert into trails(name, description, imageURL, location, difficulty, length, rating, creator_id) values($1, $2, $3, $4, $5, $6, $7, $8) returning *`,
+			`insert into trails(name, description, imageURL, location, difficulty, length, rating, creator_id, author, coordinates) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning *`,
 			[
 				name,
                 description,
@@ -27,6 +29,8 @@ const createTrail = async ({
                 length,
                 rating,
                 creator_id,
+                author, 
+                coordinates
 				
 			]
 		);

@@ -29,6 +29,8 @@ const App = () => {
 	const [cart, setCart] = useState(getCart());
 	const [filterValue, setFilterValue] = useState('');
 
+  
+
   return (<div Classname='App'>
     
     <DrawerExample
@@ -42,7 +44,7 @@ const App = () => {
     filterValue={filterValue}/>
     <Testmodule/>
     {/* <Weather/> */}
-    <DbTrailTest/>
+    <DbTrailTest token={token} user={user} setUser={setUser}/>
     <Features/>
   
   </div>)
