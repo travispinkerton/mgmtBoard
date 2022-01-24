@@ -28,6 +28,7 @@ const App = () => {
 	const [orders, setOrders] = useState([{}]);
 	const [cart, setCart] = useState(getCart());
 	const [filterValue, setFilterValue] = useState('');
+  const [created, setCreated] = useState(false);
 
   
 
@@ -44,8 +45,13 @@ const App = () => {
     filterValue={filterValue}/>
     <Testmodule/>
     {/* <Weather/> */}
-    <DbTrailTest token={token} user={user} setUser={setUser}/>
-    <Features/>
+    <DbTrailTest token={token} user={user} setUser={setUser} setCreated={setCreated} created={created}/>
+    <Features 
+    currentUser={currentUser}
+    token={token}
+    setCreated={setCreated}
+    created={created}
+    />
   
   </div>)
 }

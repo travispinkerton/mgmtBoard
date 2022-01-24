@@ -5,11 +5,13 @@ import { callApi } from '../api';
 import {
 	Grid,
 	Image,
+  Box,
 	Text,
+  Center,
   Button
 } from '@chakra-ui/react';
 
-const DbTrailTest = ({setUser}) => {
+const DbTrailTest = ({setUser, created, setCreated}) => {
 
   const [trail, setTrail] = useState([{}]);
   const [creator_id, setCreator_id] = useState('');
@@ -33,25 +35,37 @@ const DbTrailTest = ({setUser}) => {
 		fetchTrail();
     fetchUser();
 	}, []);
-  
+  useEffect(() => {
+		fetchTrail().then(setCreated(false));
+    
+	}, [created === true]);
   return (
-
-trail.map(({id, name, description, imageurl, location, difficulty, length, rating, creator_id, author, coordinates}) => 
+    
+<Box>
+<Center><Text color='peru' fontSize='40px' fontWeight='bolder' fontFamily='IBM Plex Mono, monospace'>Trail Guide</Text></Center>
+<Grid
+				templateColumns='repeat(3, 1fr)'
+				
+				
+				justifyItems='center'
+				
+				
+			>
+{trail.map(({id, name, description, imageurl, location, difficulty, length, rating, creator_id, author, coordinates}) => 
   <Grid key={id} style={{ width: '18rem',
   fontFamily : 'IBM Plex Mono, monospace',
   boxShadow : '10px 12px #aaaaaa',
   height: '700px',
   padding: '16px',
-width: '19rem',
+width: '35em',
 fontWeight : 'bold',
 margin: '1em auto',
-overflowY: 'scroll',
 backgroundColor: 'navajowhite',
-borderRadius: '10%',
+borderRadius: '7%',
 border: '2px groove black',
   border : '5px groove white',
    margin : '15px'
-    }}maxW='50%' className='products' borderRadius={'20px'} border='15px double white'>
+    }}maxW='50%' className='trails' borderRadius={'16px'} border='15px double white'>
 <Text fontFamily='courier' letterSpacing='1px' fontSize='xl'>Name: <b>{name}</b></Text>
 <Text fontSize='l'>Description: {description}</Text>
 <Image borderRadius='20px' src={imageurl}></Image>
@@ -62,6 +76,7 @@ border: '2px groove black',
 <Text fontSize='l'>Author: {author}</Text>
 <Button onClick={() => {
 window.open(coordinates.toString());
-}} variant="primary">Go to Map</Button></Grid>));
+}} variant="primary">Go to Map</Button></Grid>)}</Grid></Box>);
+
 }
 export default DbTrailTest;

@@ -16,4 +16,14 @@ trailsRouter.get('/', async (req, res, next) => {
 	}
 });
 
+trailsRouter.post('/', async (req, res, next) => {
+	try {
+		const newTrail  = await createTrail(req.body);
+		console.log('trail:', newTrail);
+		res.send(newTrail);
+	} catch ({ name, message }) {
+		next({ name, message });
+	}
+});
+
 module.exports = { trailsRouter }
