@@ -44,7 +44,7 @@ const DbTrailTest = ({setUser, created, setCreated}) => {
 <Box>
 <Center><Text color='peru' fontSize='40px' fontWeight='bolder' fontFamily='IBM Plex Mono, monospace'>Trail Guide</Text></Center>
 <Grid
-				templateColumns='repeat(3, 1fr)'
+				templateColumns='repeat(2, 1fr)'
 				
 				
 				justifyItems='center'

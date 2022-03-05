@@ -98,12 +98,13 @@ const Features = ({currentUser, token, created, setCreated})  => {
       event.preventDefault();
       let trailCoordinates = event.target.value;
       console.log(trailCoordinates);
-      return setTrailCoordinates(trailLocation);
+      return setTrailCoordinates(trailCoordinates);
       
   }}></Input></Form>
   <Button type='submit' value={setCreated}  onSubmit={onClose} onClick={()=>{
     setCreated(true);
-    created === true ? onClose() : onOpen();
+    
+    
     console.log(created);
   }}>
 					Submit
