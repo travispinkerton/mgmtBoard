@@ -59,7 +59,7 @@ const Features = ({currentUser, token, created, setCreated})  => {
       return setTrailDescription(trailDescription);
       
   }}></Input></Form>
-  <Form>Link to Image<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="image url" onChange={(event )=> {
+  <Form>Image Link<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="image url" onChange={(event )=> {
       event.preventDefault();
       let imageUrl = event.target.value;
       console.log(imageUrl);
@@ -73,35 +73,35 @@ const Features = ({currentUser, token, created, setCreated})  => {
       return setTrailLocation(trailLocation);
       
   }}></Input></Form>
-  <Form>Difficulty<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="difficulty" onChange={(event )=> {
+  <Form>Difficulty<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="easy/hard" onChange={(event )=> {
       event.preventDefault();
       let trailDifficulty = event.target.value;
       console.log(trailDifficulty);
       return setTrailDifficulty(trailDifficulty);
       
   }}></Input></Form>
-  <Form>Length(miles)<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="length" onChange={(event )=> {
+  <Form>Length(mi)<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="length" onChange={(event )=> {
       event.preventDefault();
       let trailLength = event.target.value;
       console.log(trailLength);
       return setTrailLength(trailLength);
       
   }}></Input></Form>
-  <Form>Rating<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="rating" onChange={(event )=> {
+  <Form>Rating(/5)<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="rating" onChange={(event )=> {
       event.preventDefault();
       let trailRating = event.target.value;
       console.log(trailRating);
       return setTrailRating(trailRating);
       
   }}></Input></Form>
-  <Form>Google Maps Link<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="coordinates" onChange={(event )=> {
+  <Form>G-Maps Link<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="coordinates" onChange={(event )=> {
       event.preventDefault();
       let trailCoordinates = event.target.value;
       console.log(trailCoordinates);
       return setTrailCoordinates(trailCoordinates);
       
   }}></Input></Form>
-  <Button type='submit' value={setCreated}  onSubmit={onClose} onClick={()=>{
+  <Button type='submit' style={{border:'2px solid black', backgroundColor: 'cornflowerblue', fontWeight: 'bolder', color:'white'}} value={setCreated}  onSubmit={onClose} onClick={()=>{
     setCreated(true);
     
     

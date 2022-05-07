@@ -38,6 +38,7 @@ import {
   storeCurrentUserAddress
 } from '../auth';
 
+
 class Login extends React.Component {
  
   constructor(props) {
@@ -50,7 +51,7 @@ class Login extends React.Component {
       this.setState({
           pictures: this.state.pictures.concat(picture),
       });
-      
+      console.log (picture);
   }
 
   render() {
@@ -224,7 +225,7 @@ function DrawerExample({filterValue, user, setUser, setFilterValue, token, setTo
       <Button
         id="submit-info"
         colorScheme="green"
-        value={username, password}
+        value={(username, password)}
         onClick={handleSubmitLogin}
             
         

@@ -8,13 +8,17 @@ import {
   Box,
 	Text,
   Center,
-  Button
+  Button,
+  useToast
 } from '@chakra-ui/react';
+
+
 
 const DbTrailTest = ({setUser, created, setCreated}) => {
 
   const [trail, setTrail] = useState([{}]);
   const [creator_id, setCreator_id] = useState('');
+  const toast = useToast();
 
   const fetchUser = async () => {
 		const userData = await callApi({ path: `/users/${creator_id}`});
@@ -31,6 +35,8 @@ const DbTrailTest = ({setUser, created, setCreated}) => {
     } catch (error) {}
   };
 
+  
+
   useEffect(() => {
 		fetchTrail();
     fetchUser();
@@ -39,6 +45,16 @@ const DbTrailTest = ({setUser, created, setCreated}) => {
 		fetchTrail().then(setCreated(false));
     
 	}, [created === true]);
+
+  if (created === true) {
+    toast({
+      title: 'Trail Added Successfully!',
+      status: 'success',
+      duration: '5000',
+      isClosable: 'true',
+      position: 'top'
+    });
+  }
   return (
     
 <Box>

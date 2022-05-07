@@ -28,7 +28,7 @@ const App = () => {
 	const [orders, setOrders] = useState([{}]);
 	const [cart, setCart] = useState(getCart());
 	const [filterValue, setFilterValue] = useState('');
-  const [created, setCreated] = useState(false);
+  const [created, setCreated] = useState(Boolean);
 
   
 
