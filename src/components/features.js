@@ -45,7 +45,7 @@ const Features = ({currentUser, token, created, setCreated})  => {
 };
 
  
-    return <Box fontFamily='IBM Plex Mono, monospace' display='flex' flexDirection='row' justifyContent='space-evenly'><form  style={{display : 'flex', flexDirection : 'row', justifyContent : 'space-evenly'}} onSubmit={handleAddProductSubmit}><Form>Trail Name<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="trail name" onChange={(event )=> {
+    return <Box fontFamily='IBM Plex Mono, monospace' display='flex' flexDirection='row' justifyContent='space-evenly'><form  style={{display : 'flex', flexDirection : 'row', justifyContent : 'space-evenly', border : '5px groove black'}} onSubmit={handleAddProductSubmit}><Form>Trail Name<Input border="4px groove darkmagenta" maxWidth="250px" className="username" type="text" placeholder="trail name" onChange={(event )=> {
       event.preventDefault();
       let trailName = event.target.value;
       console.log(trailName);
